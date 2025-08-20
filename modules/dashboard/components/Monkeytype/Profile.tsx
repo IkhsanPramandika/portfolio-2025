@@ -7,6 +7,28 @@ import Tooltip from "@/common/components/elements/Tooltip";
 import SpotlightCard from "@/common/components/elements/SpotlightCard";
 import { MonkeytypeData } from "@/common/types/monkeytype";
 
+// --- FUNGSI HELPER BARU ---
+// Fungsi untuk mengubah total detik menjadi format HH:mm:ss dengan aman
+const formatTypingTime = (totalSeconds: number) => {
+  // Menangani kasus jika data tidak valid atau tidak ada
+  if (isNaN(totalSeconds) || totalSeconds < 0) {
+    return "00:00:00";
+  }
+
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = Math.floor(totalSeconds % 60);
+
+  // Tambahkan '0' di depan jika angkanya < 10 untuk format yang konsisten
+  const paddedHours = String(hours).padStart(2, '0');
+  const paddedMinutes = String(minutes).padStart(2, '0');
+  const paddedSeconds = String(seconds).padStart(2, '0');
+
+  return `${paddedHours}:${paddedMinutes}:${paddedSeconds}`;
+};
+// -------------------------
+
+
 interface ProfileProps {
   data: MonkeytypeData;
 }
@@ -21,7 +43,7 @@ const Item = ({ label, value }: ItemProps) => (
     <span className="text-xs text-neutral-600 dark:text-neutral-400">
       {label}
     </span>
-    <span className="text-2xl text-green-600">{value}</span>
+    <span className="text-2xl text-blue-600">{value}</span>
   </div>
 );
 
@@ -32,11 +54,11 @@ const Profile = ({ data }: ProfileProps) => {
   const endDate = new Date();
   const durationDays = differenceInDays(endDate, date);
 
-  const timeTyping = data?.typingStats.timeTyping;
-  const minutes = Math.floor(timeTyping / 60);
-  const seconds = Math.round(timeTyping % 60);
+  // --- PERBAIKAN: Ambil total detik dengan aman ---
+  const timeTypingInSeconds = data?.typingStats?.timeTyping || 0;
+  // ---------------------------------------------
 
-  let xp = data?.xp;
+  let xp = data?.xp || 0;
   let level = 1;
   let xpNeeded = 100;
 
@@ -60,8 +82,8 @@ const Profile = ({ data }: ProfileProps) => {
 
   const XpProgress = () => (
     <div className="flex w-full items-center justify-between gap-3">
-      <Tooltip title={`${data?.xp} ${t("total_xp")}`}>
-        <span className="text-sm font-medium text-green-600">{level}</span>
+      <Tooltip title={`${data?.xp || 0} ${t("total_xp")}`}>
+        <span className="text-sm font-medium text-blue-600">{level}</span>
       </Tooltip>
 
       <div className="relative h-2 w-full rounded-full bg-neutral-300 dark:bg-dark ">
@@ -89,16 +111,16 @@ const Profile = ({ data }: ProfileProps) => {
         <div className="flex gap-x-4">
           <div className="flex items-center">
             <Image
-              src={"/images/satria-3.jpg"}
+              src={"/images/isan1.jpg"}
               width={80}
               height={80}
-              alt="Satria Bahari"
+              alt="Ikhsan Pramandika"
               className="rounded-full border-2 border-neutral-400 transition-all duration-300 dark:border-neutral-600 lg:hover:scale-105"
             />
           </div>
 
           <div className="flex flex-col">
-            <span className="text-2xl font-medium text-green-600">
+            <span className="text-2xl font-medium text-blue-600">
               {data?.name}
             </span>
             <Tooltip title={`${durationDays} ${t("days_ago")}`}>
@@ -132,9 +154,9 @@ const Profile = ({ data }: ProfileProps) => {
         />
         <Item
           label={t("title_time_typing")}
-          value={
-            format(new Date(0, 0, 0, 0, minutes, seconds), "HH:mm:ss") || "N/A"
-          }
+          // --- PERBAIKAN: Menggunakan fungsi helper yang aman ---
+          value={formatTypingTime(timeTypingInSeconds)}
+          // ----------------------------------------------------
         />
       </div>
     </SpotlightCard>

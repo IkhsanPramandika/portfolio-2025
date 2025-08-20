@@ -8,7 +8,6 @@ const Contact = () => {
     <>
       <ContactList />
       <Breakline className="my-6" />
-      <ContactForm />
     </>
   );
 };

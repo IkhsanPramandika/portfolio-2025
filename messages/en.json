@@ -1,9 +1,9 @@
 {
   "HomePage": {
-    "intro": "Hi, I'm Satria Bahari",
-    "location": "Based in Jambi, Indonesia 🇮🇩",
-    "location_type": "Onsite",
-    "resume": "Experienced and passionate Fullstack Developer specializing in building scalable and efficient digital solutions. On the frontend, I work with Next.js, TypeScript, and Tailwind CSS to craft responsive and accessible user interfaces. On the backend, I develop robust services using Golang, and for mobile, I build native Android apps with Kotlin. I’m a collaborative and detail-oriented engineer committed to delivering well-structured, high-performance applications across platforms.",
+    "intro": "Hi, I'm Muhammad Ikhsan Pramandika,",
+    "location": "Based in Pekanbaru, Indonesia 🇮🇩",
+    "location_type": "Onsite & Remote",
+    "resume": "A detail-oriented IT professional with a dual specialization in UI/UX Design and Quality Assurance. Proficient in crafting intuitive, user-centric interfaces with Figma and ensuring their flawless execution through rigorous testing methodologies. My experience spans the full product lifecycle, from designing high-fidelity mockups to identifying critical bugs using tools like Jira and Postman. I build robust applications with PHP (Laravel) for web and Flutter for mobile, always bridging the gap between creative design and technical stability.",
     "skills": {
       "title": "Skills",
       "sub_title": "My professional skills."
@@ -14,16 +14,14 @@
     }
   },
   "AboutPage": {
-    "title": "About",
+    "title": "About Me",
     "description": "A brief introduction to who I am.",
     "resume": {
-      "paragraf_1": "Hello there! Thank you for visiting my personal website. I'm Satria Bahari, a student majoring in Information Systems at the University of Jambi. I'm a Fullstack Developer with a passion for building impactful software products. My stack includes modern frontend technologies like Next.js, TypeScript, and Tailwind CSS, as well as backend development using Golang. For mobile applications, I develop native Android apps using Kotlin.",
-
-      "paragraf_2": "I enjoy creating solutions that are both user-friendly and performant. Whether it's building intuitive interfaces or architecting backend services, I aim to bring efficiency and clarity into every layer of the application. I’m a fast learner who thrives in dynamic environments, and I enjoy solving complex problems collaboratively.",
-
-      "paragraf_3": "I believe that great communication and team synergy are key to success in software development. My experience has shaped my technical and analytical skills, as well as my leadership qualities. I'm always excited to work in teams, learn from others, and contribute to impactful projects.",
-
-      "paragraf_4": "Best regards,"
+      "paragraf_1": "Hello and welcome to my portfolio. I'm Muhammad Ikhsan Pramandika, an Information Systems graduate with a dedicated focus on the intersection of IT Quality Assurance and UI/UX Design. I am passionate about crafting digital experiences that are not only intuitive and engaging but also meticulously tested to ensure flawless performance.",
+      "paragraf_2": "My approach is twofold: I build user-centric designs and then I try to break them. As a UI/UX designer, I have delivered intuitive interfaces that achieved an 89.17% Excellent usability score. As a Quality Assurance professional, I have identified and helped resolve over 50 critical bugs in complex financial and management systems using tools like Jira and Postman...",
+      "paragraf_3": "I thrive in collaborative environments where I can contribute to the entire product lifecycle—from the initial wireframe to the final bug-free launch. Having authored 260+ test scenarios and designed over 200 high-fidelity screens across various projects, I am equipped with a detail-oriented and proactive mindset...",
+      "paragraf_4": "Thank you for visiting. I look forward to the opportunity to collaborate and build something exceptional together.",
+      "paragraf_5": "Best Regards,"
     },
     "career": {
       "title": "Career",
@@ -161,9 +159,9 @@
         "title": "Let's Connect",
         "description": "Connect with me professionally."
       },
-      "tiktok": {
-        "title": "Join the Fun",
-        "description": "Watch engaging and fun content."
+      "behance": {
+        "title": "View My Portfolio",
+        "description": "Explore my creative projects and design portfolio on Behance."
       },
       "github": {
         "title": "Explore the Code",
@@ -185,7 +183,7 @@
   "Footer": {
     "hire": "Hire me.",
     "copyright_1": "COPYRIGHT © ",
-    "copyright_2": "Satria Bahari. All rights reserved."
+    "copyright_2": "Ikhsan Pramandika. All rights reserved."
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",

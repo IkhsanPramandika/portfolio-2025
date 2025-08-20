@@ -33,7 +33,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
           <li key={subItem?.name}>
             <Progress
               data={subItem}
-              className={"bg-gradient-to-r from-cyan-600 to-green-500"}
+              className={"to-primary-500 bg-gradient-to-r from-cyan-600"}
             />
           </li>
         ))}

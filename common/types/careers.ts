@@ -1,15 +1,16 @@
+import type { MultiLanguageText, MultiLanguageResponsibilities } from ".";
 export interface CareerProps {
-  position: string;
+  position: MultiLanguageText;
   company: string;
   logo: string | null;
   location: string;
-  location_type: string;
-  type: string;
+  location_type: MultiLanguageText;
+  type: MultiLanguageText;
   start_date: string;
   end_date: string | null;
-  industry: string;
+  industry: MultiLanguageText;
   link: string | null;
-  responsibilities?: string[];
-  indexCareer?: number;
+  responsibilities?: MultiLanguageResponsibilities;
   isShow?: boolean;
+  indexCareer?: number;
 }

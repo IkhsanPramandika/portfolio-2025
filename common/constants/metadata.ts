@@ -1,16 +1,17 @@
 export const METADATA = {
-  creator: "Satria Bahari",
+  creator: "Muhammad Ikhsan Pramandika",
   description: "Personal website, portfolio, blog",
-  keyword: "satria, satria bahari",
+  keyword:
+    "Ikhsan, Ikhsan Pramandika, Muhammad Ikhsan Pramandika, portfolio, blog, personal website, UI/UX Designer, Quality Assurance",
   authors: {
-    name: "Satria Bahari",
+    name: "Muhammad Ikhsan Pramandika",
     url: process.env.DOMAIN,
   },
   openGraph: {
     url: process.env.DOMAIN,
-    siteName: "Satria Bahari",
+    siteName: "Muhammad Ikhsan Pramandika",
     locale: "id-ID",
   },
-  exTitle: "| Satria Bahari",
-  profile: "/images/satria.jpg",
+  exTitle: "| Ikhsan Pramandika",
+  profile: "/images/isan1.jpg",
 };

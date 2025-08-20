@@ -42,10 +42,9 @@ const Monkeytype = () => {
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >
-          SatriaAxel
+          ikhsanpramandika
         </Link>
       </SectionSubHeading>
-
       {error ? (
         <EmptyState message={t("error")} />
       ) : isLoading ? (

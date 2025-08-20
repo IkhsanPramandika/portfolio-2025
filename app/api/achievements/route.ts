@@ -1,34 +1,26 @@
 import { type NextRequest, NextResponse } from "next/server";
-
 import { getAchievementsData } from "@/services/achievements";
 
 export const GET = async (req: NextRequest) => {
   try {
     const searchParams = req.nextUrl.searchParams;
-    const queryCategory = searchParams.get("category");
-    const querySearch = searchParams.get("search");
 
-    if (queryCategory && querySearch) {
-      const data = await getAchievementsData({
-        category: queryCategory,
-        search: querySearch,
-      });
-      return NextResponse.json(data, { status: 200 });
-    }
+    // Ambil semua parameter dan langsung ubah 'null' menjadi 'undefined'
+    const queryCategory = searchParams.get("category") ?? undefined;
+    const querySearch = searchParams.get("search") ?? undefined;
+    const queryLang = searchParams.get("lang") || "en";
 
-    if (queryCategory && queryCategory.trim()) {
-      const data = await getAchievementsData({ category: queryCategory });
-      return NextResponse.json(data, { status: 200 });
-    }
+    console.log("API Route Menerima Kategori:", queryCategory);
 
-    if (querySearch) {
-      const data = await getAchievementsData({ search: querySearch });
-      return NextResponse.json(data, { status: 200 });
-    }
+    const data = await getAchievementsData({
+      category: queryCategory,
+      search: querySearch,
+      lang: queryLang,
+    });
 
-    const data = await getAchievementsData({});
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
+    console.error("API Achievements Error:", error);
     return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 },

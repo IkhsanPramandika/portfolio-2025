@@ -1,17 +1,16 @@
 export type ProjectItem = {
-  id: number;
+  id: string; // UUID sekarang adalah string
+  image_url?: string | null;
+  live_url?: string | null;
+  github_url?: string | null;
+  stacks?: string[];
+  is_featured?: boolean;
   title: string;
   slug: string;
-  description: string;
-  image: string;
-  link_demo?: string | null;
-  link_github?: string | null;
-  stacks: string[];
+  description?: string | null;
   content?: string | null;
-  is_show: boolean;
-  is_featured: boolean;
 };
 
 export type ProjectItemProps = {
   projects: ProjectItem[];
-}
+};

@@ -1,12 +1,11 @@
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { FiExternalLink as LinkIcon } from "react-icons/fi";
 
 interface ProjectLinkProps {
   title?: string;
-  link_github?: string;
-  link_demo?: string;
+  github_url?: string;
+  live_url?: string;
 }
 
 interface LinkComponentProps {
@@ -17,39 +16,39 @@ interface LinkComponentProps {
 
 const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
   return (
-    <Link href={url} target="_blank">
+    <a href={url} target="_blank" rel="noopener noreferrer">
       <div className="flex items-center gap-2 font-medium text-neutral-700 dark:text-neutral-300">
         <i>{icon}</i>
-        <p className="text-sm transition-all duration-300 dark:text-teal-500 hover:dark:text-teal-400">
+        <p className="text-sm transition-all duration-300 hover:text-teal-400 dark:text-teal-500">
           {text}
         </p>
       </div>
-    </Link>
+    </a>
   );
 };
 
-const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
+const ProjectLink = ({ title, github_url, live_url }: ProjectLinkProps) => {
   const t = useTranslations("ProjectsPage");
 
   return (
-    <div className="flex gap-4">
-      {link_github ? (
+    <div className="flex flex-wrap gap-4">
+      {github_url && (
         <LinkComponent
-          url={link_github}
+          url={github_url}
           text={t("source_code_text")}
           icon={<GithubIcon size={22} />}
         />
-      ) : null}
-      {link_github && link_demo ? (
+      )}
+      {github_url && live_url && (
         <span className="text-neutral-400 dark:text-neutral-600">|</span>
-      ) : null}
-      {link_demo ? (
+      )}
+      {live_url && (
         <LinkComponent
-          url={link_demo}
+          url={live_url}
           text={t("live_demo_text")}
           icon={<LinkIcon size={22} />}
         />
-      ) : null}
+      )}
     </div>
   );
 };

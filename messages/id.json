@@ -1,9 +1,9 @@
 {
   "HomePage": {
-    "intro": "Hai, saya Satria Bahari",
-    "location": "Berdomisili di Jambi, Indonesia 🇮🇩",
-    "location_type": "Tatap Muka",
-    "resume": "Pengembang Fullstack yang berpengalaman dan penuh semangat, berspesialisasi dalam membangun solusi digital yang skalabel dan efisien. Di sisi frontend, saya menggunakan Next.js, TypeScript, dan Tailwind CSS untuk membuat antarmuka pengguna yang responsif dan mudah diakses. Di sisi backend, saya mengembangkan layanan yang tangguh menggunakan Golang, dan untuk mobile, saya membangun aplikasi Android native menggunakan Kotlin. Saya adalah engineer yang kolaboratif dan berorientasi pada detail, berkomitmen untuk menghadirkan aplikasi lintas platform yang terstruktur dengan baik dan berkinerja tinggi.",
+    "intro": "Hai, saya Muhammad Ikhsan Pramandika,",
+    "location": "Berdomisili di Pekanbaru, Indonesia 🇮🇩",
+    "location_type": "Tatap Muka & Remote",
+    "resume": "Seorang profesional IT yang berorientasi pada detail dengan spesialisasi ganda di bidang Desain UI/UX dan Quality Assurance. Mahir dalam merancang antarmuka yang intuitif dan berpusat pada pengguna menggunakan Figma, serta memastikan eksekusinya sempurna melalui metodologi pengujian yang teliti. Pengalaman saya mencakup siklus hidup produk secara penuh, mulai dari merancang mockup high-fidelity hingga mengidentifikasi bug kritis menggunakan tools seperti Jira dan Postman. Saya membangun aplikasi yang tangguh dengan PHP (Laravel) untuk web dan Flutter untuk seluler, selalu menjembatani kesenjangan antara desain kreatif dan stabilitas teknis.",
     "skills": {
       "title": "Keahlian",
       "sub_title": "Keahlian profesional saya."
@@ -14,16 +14,14 @@
     }
   },
   "AboutPage": {
-    "title": "Tentang",
+    "title": "Tentang Saya",
     "description": "Perkenalan singkat tentang siapa saya.",
     "resume": {
-      "paragraf_1": "Halo! Terima kasih telah mengunjungi situs pribadi saya. Saya Satria Bahari, seorang mahasiswa Sistem Informasi di Universitas Jambi. Saya adalah seorang Fullstack Developer dengan minat besar dalam membangun produk perangkat lunak yang berdampak. Stack teknologi saya meliputi teknologi frontend modern seperti Next.js, TypeScript, dan Tailwind CSS, serta pengembangan backend menggunakan Golang. Untuk aplikasi mobile, saya mengembangkan aplikasi Android native menggunakan Kotlin.",
-
-      "paragraf_2": "Saya menikmati menciptakan solusi yang ramah pengguna dan memiliki performa tinggi. Baik saat membangun antarmuka yang intuitif maupun merancang layanan backend, saya selalu berusaha membawa efisiensi dan kejelasan pada setiap lapisan aplikasi. Saya pembelajar cepat yang tumbuh dalam lingkungan dinamis dan senang menyelesaikan masalah kompleks secara kolaboratif.",
-
-      "paragraf_3": "Saya percaya bahwa komunikasi yang baik dan sinergi tim adalah kunci kesuksesan dalam pengembangan perangkat lunak. Pengalaman saya telah membentuk kemampuan teknis dan analitis saya, serta kualitas kepemimpinan saya. Saya selalu bersemangat untuk bekerja dalam tim, belajar dari orang lain, dan berkontribusi pada proyek yang berdampak.",
-
-      "paragraf_4": "Salam hangat,"
+      "paragraf_1": "Halo dan selamat datang di portofolio saya. Saya Muhammad Ikhsan Pramandika, seorang lulusan Sistem Informasi dengan fokus dedikasi pada persimpangan antara Penjaminan Mutu IT (IT Quality Assurance) dan Desain UI/UX. Saya sangat antusias dalam menciptakan pengalaman digital yang tidak hanya intuitif dan menarik, tetapi juga teruji secara teliti untuk memastikan kinerja yang sempurna.",
+      "paragraf_2": "Pendekatan saya memiliki dua sisi: Saya membangun desain yang berpusat pada pengguna, kemudian saya mencoba untuk menemukan celahnya. Sebagai seorang desainer UI/UX, saya telah menghasilkan antarmuka intuitif yang berhasil mencapai skor usabilitas 'Excellent' sebesar 89,17% . Sebagai seorang profesional Quality Assurance, saya telah mengidentifikasi dan membantu menyelesaikan lebih dari 50 bug kritis dalam sistem keuangan dan manajemen yang kompleks menggunakan tools seperti Jira dan Postman. Perspektif ganda ini memungkinkan saya untuk menjembatani kesenjangan krusial antara harapan pengguna dan eksekusi teknis.",
+      "paragraf_3": "Saya berkembang dalam lingkungan kolaboratif di mana saya dapat berkontribusi pada keseluruhan siklus hidup produk—mulai dari wireframe awal hingga peluncuran final yang bebas bug. Dengan pengalaman menulis lebih dari 260 skenario pengujian dan merancang lebih dari 200 layar high-fidelity di berbagai proyek, saya dibekali dengan pola pikir yang berorientasi pada detail dan proaktif . Saya bersemangat untuk membawa perpaduan unik antara desain kreatif dan ketajaman analitis saya ke dalam tim yang berpikiran maju.",
+      "paragraf_4": "Terima kasih telah berkunjung. Saya menantikan kesempatan untuk berkolaborasi dan membangun sesuatu yang luar biasa bersama.",
+      "paragraf_5": "Salam Hormat,"
     },
     "career": {
       "title": "Karier",
@@ -161,9 +159,9 @@
         "title": "Mari Terhubung",
         "description": "Terhubung secara profesional dengan saya."
       },
-      "tiktok": {
-        "title": "Ikut Seru-seruan",
-        "description": "Tonton konten yang seru dan menarik."
+      "behance": {
+        "title": "Lihat Portofolio Saya",
+        "description": "Jelajahi proyek kreatif dan portofolio desain saya di Behance."
       },
       "github": {
         "title": "Jelajahi Kode",
@@ -185,7 +183,7 @@
   "Footer": {
     "hire": "Rekrut saya.",
     "copyright_1": "HAK CIPTA © ",
-    "copyright_2": "Satria Bahari. Seluruh hak dilindungi."
+    "copyright_2": "Ikhsan Pramandika. Seluruh hak dilindungi."
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",

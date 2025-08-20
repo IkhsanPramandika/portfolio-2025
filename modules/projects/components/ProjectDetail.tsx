@@ -5,15 +5,14 @@ import Image from "@/common/components/elements/Image";
 import MDXComponent from "@/common/components/elements/MDXComponent";
 import { ProjectItem } from "@/common/types/projects";
 import { STACKS } from "@/common/constants/stacks";
-
 import ProjectLink from "./ProjectLink";
 
 const ProjectDetail = ({
   title,
-  image,
+  image_url,
   stacks,
-  link_demo,
-  link_github,
+  live_url,
+  github_url,
   content,
 }: ProjectItem) => {
   const t = useTranslations("ProjectsPage");
@@ -26,14 +25,12 @@ const ProjectDetail = ({
             {t("tech_stack")} :{" "}
           </span>
           <div className="flex flex-wrap items-center gap-3">
-            {stacks.map((stack: string, index: number) => {
+            {stacks?.map((stack: string, index: number) => {
               const stackData = STACKS[stack];
-
+              if (!stackData) return null;
               return (
                 <Tooltip title={stack} key={index}>
-                  <div className={`${stackData.color}`}>
-                    {STACKS[stack].icon}
-                  </div>
+                  <div className={`${stackData.color}`}>{stackData.icon}</div>
                 </Tooltip>
               );
             })}
@@ -41,26 +38,24 @@ const ProjectDetail = ({
         </div>
         <ProjectLink
           title={title}
-          link_demo={link_demo || ""}
-          link_github={link_github || ""}
+          live_url={live_url || ""}
+          github_url={github_url || ""}
         />
       </div>
-
-      <div className="overflow-hidden">
+      <div className="overflow-hidden rounded-lg">
         <Image
-          src={image}
+          src={image_url || "/images/projects/placeholder.jpg"}
           alt={title}
           width={1000}
           height={400}
           className="transition duration-500 hover:scale-[1.04]"
         />
       </div>
-
-      {content ? (
-        <div className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
+      {content && (
+        <div className="prose prose-invert mt-5 max-w-none leading-[1.8] dark:text-neutral-300">
           <MDXComponent>{content}</MDXComponent>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

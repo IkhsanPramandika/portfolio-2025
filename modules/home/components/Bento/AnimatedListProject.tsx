@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import useSWR from "swr";
 
 import AnimatedList from "@/common/components/elements/AnimatedList";
@@ -7,23 +8,31 @@ import { ProjectItem } from "@/common/types/projects";
 import { fetcher } from "@/services/fetcher";
 
 const AnimatedListProject = () => {
-  const { data } = useSWR("/api/projects", fetcher);
+  // 1. Ambil bahasa yang aktif
+  const locale = useLocale(); 
+  
+  // 2. Minta data ke API sesuai bahasa
+  const { data } = useSWR(`/api/projects?lang=${locale}`, fetcher);
 
+  // Proses data setelah diterima
   const projects =
     data
-      ?.filter((item: ProjectItem) => item?.is_show)
-      .sort((a: ProjectItem, b: ProjectItem) => b.id - a.id)
+      // 3. Hapus filter is_show
+      ?.sort((a: ProjectItem, b: ProjectItem) => {
+        // 4. Perbaiki logika sortir, urutkan berdasarkan judul
+        if (a.is_featured && !b.is_featured) return -1;
+        if (!a.is_featured && b.is_featured) return 1;
+        return a.title.localeCompare(b.title);
+      })
       .map((item: ProjectItem) => ({
-        image: item.image.startsWith("/") ? item.image : `/${item.image}`,
-        slug: `/projects/${item.slug}`,
+        // 5. Perbaiki nama properti image -> image_url
+        image: item.image_url || "/images/projects/placeholder.jpg", 
+        href: `/projects/${item.slug}`,
       })) ?? [];
 
   return (
     <AnimatedList
-      items={projects.map((item: ProjectItem) => ({
-        image: item.image.startsWith("/") ? item.image : `/${item.image}`,
-        href: item.slug,
-      }))}
+      items={projects} // Cukup gunakan variabel projects yang sudah diproses
       itemImage={true}
       showGradients={false}
       displayScrollbar={false}

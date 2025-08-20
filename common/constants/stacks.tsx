@@ -1,69 +1,122 @@
 import { BiLogoPostgresql } from "react-icons/bi";
-import { BsFillBootstrapFill, BsRobot } from "react-icons/bs";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import { FaNpm, FaGolang } from "react-icons/fa6";
+import { BsFillBootstrapFill } from "react-icons/bs";
+import { FaMicrosoft } from "react-icons/fa6";
 import {
   SiCss3,
-  SiExpress,
-  SiFramer,
   SiGithub,
   SiHtml5,
-  SiJavascript,
   SiNextdotjs,
-  SiNodedotjs,
-  SiPrisma,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-  SiVite,
   SiLaravel,
   SiPhp,
-  SiRedux,
-  SiVuedotjs,
   SiFirebase,
-  SiReactrouter,
-  SiReacthookform,
-  SiReacttable,
   SiMysql,
-  SiMongodb,
-  SiAstro,
-  SiBun,
-  SiYarn,
-  SiNestjs,
   SiSupabase,
-  SiJest,
-  SiDocker,
+  SiPython,
+  SiFigma,
+  SiCanva,
+  SiJira,
+  SiTrello,
+  SiPostman,
+  SiTableau,
+  SiSharp,
+  SiDotnet,
   SiKotlin,
+  SiAndroidstudio,
+  SiOdoo,
+  SiTypescript,
+  SiBun,
+  SiTailwindcss,
 } from "react-icons/si";
 
 export type SkillProps = {
   [key: string]: {
     icon: JSX.Element;
-    background: string;
     color: string;
+    background: string;
     isActive?: boolean;
   };
 };
 
-const iconSize = 26;
+const iconSize = 24;
 
 export const STACKS: SkillProps = {
-  HTML: {
-    icon: <SiHtml5 size={iconSize} />,
-    background: "bg-orange-500",
-    color: "text-orange-500",
+  // --- Skill Utama untuk Tampil di Halaman Depan ---
+  "Next.js": {
+    icon: <SiNextdotjs size={iconSize} />,
+    color: "text-neutral-50",
+    background: "bg-neutral-800",
     isActive: true,
   },
-  CSS: {
-    icon: <SiCss3 size={iconSize} />,
-    background: "bg-blue-500",
+  TypeScript: {
+    icon: <SiTypescript size={iconSize} />,
     color: "text-blue-500",
+    background: "bg-blue-500",
     isActive: true,
   },
-  Bootstrap: {
-    icon: <BsFillBootstrapFill size={iconSize} />,
-    background: "bg-violet-600",
-    color: "text-violet-600",
+  Laravel: {
+    icon: <SiLaravel size={iconSize} />,
+    color: "text-red-500",
+    background: "bg-red-500",
+    isActive: true,
+  },
+  PHP: {
+    icon: <SiPhp size={iconSize} />,
+    color: "text-indigo-500",
+    background: "bg-indigo-500",
+    isActive: true,
+  },
+  Kotlin: {
+    icon: <SiKotlin size={iconSize} />,
+    color: "text-purple-600",
+    background: "bg-purple-600",
+    isActive: true,
+  },
+  "Android Studio": {
+    icon: <SiAndroidstudio size={iconSize} />,
+    color: "text-green-500",
+    background: "bg-green-500",
+    isActive: true,
+  },
+  Python: {
+    icon: <SiPython size={iconSize} />,
+    color: "text-yellow-400",
+    background: "bg-yellow-400",
+    isActive: true,
+  },
+  Figma: {
+    icon: <SiFigma size={iconSize} />,
+    color: "text-pink-500",
+    background: "bg-pink-500",
+    isActive: true,
+  },
+  Tableau: {
+    icon: <SiTableau size={iconSize} />,
+    color: "text-blue-600",
+    background: "bg-blue-600",
+    isActive: true,
+  },
+  MySql: {
+    icon: <SiMysql size={iconSize} />,
+    color: "text-cyan-700",
+    background: "bg-cyan-700",
+    isActive: true,
+  },
+  Supabase: {
+    icon: <SiSupabase size={iconSize} />,
+    color: "text-emerald-500",
+    background: "bg-emerald-500",
+    isActive: true,
+  },
+  "C#": {
+    icon: <SiSharp size={iconSize} />,
+    color: "text-purple-700",
+    background: "bg-purple-700",
+    isActive: true,
+  },
+  "ASP.NET MVC": {
+    icon: <SiDotnet size={iconSize} />,
+    color: "text-purple-600",
+    background: "bg-purple-600",
     isActive: true,
   },
   TailwindCSS: {
@@ -72,196 +125,60 @@ export const STACKS: SkillProps = {
     color: "text-sky-400",
     isActive: true,
   },
-  JavaScript: {
-    icon: <SiJavascript size={iconSize} />,
-    background: "bg-yellow-400",
-    color: "text-yellow-400",
-    isActive: true,
-  },
-  TypeScript: {
-    icon: <SiTypescript size={iconSize} />,
-    background: "bg-blue-500",
-    color: "text-blue-500",
-    isActive: true,
-  },
-  "Vue.js": {
-    icon: <SiVuedotjs size={iconSize} />,
-    background: "bg-green-400",
-    color: "text-green-400",
-    isActive: true,
-  },
-  "React.js": {
-    icon: <SiReact size={iconSize} />,
-    background: "bg-cyan-400",
-    color: "text-cyan-400",
-    isActive: true,
-  },
-  "React Table": {
-    icon: <SiReacttable size={iconSize} />,
-    background: "bg-rose-600",
-    color: "text-rose-600",
-    isActive: true,
-  },
-  "React Hook Form": {
-    icon: <SiReacthookform size={iconSize} />,
-    background: "bg-pink-500",
+
+  // --- Skill Lainnya (Hanya untuk halaman proyek) ---
+  "User Interface Design": {
+    icon: <SiFigma size={iconSize} />,
     color: "text-pink-500",
-    isActive: true,
+    background: "bg-pink-500",
+    isActive: false,
   },
-  "React Router": {
-    icon: <SiReactrouter size={iconSize} />,
-    background: "bg-red-500",
-    color: "text-red-500",
-    isActive: true,
-  },
-  Vite: {
-    icon: <SiVite size={iconSize} />,
-    background: "bg-purple-500",
+  "User Experience (UX)": {
+    icon: <SiFigma size={iconSize} />,
     color: "text-purple-500",
-    isActive: true,
-  },
-  "Framer Motion": {
-    icon: <TbBrandFramerMotion size={iconSize} />,
-    background: "bg-yellow-400",
-    color: "text-yellow-400",
-    isActive: true,
-  },
-  Redux: {
-    icon: <SiRedux size={iconSize} />,
-    background: "bg-violet-500",
-    color: "text-violet-500",
-    isActive: true,
-  },
-  "Astro.js": {
-    icon: <SiAstro size={iconSize} />,
-    background: "bg-violet-600",
-    color: "text-violet-600",
-    isActive: true,
-  },
-  "Next.js": {
-    icon: <SiNextdotjs size={iconSize} />,
-    background: "bg-neutral-800",
-    color: "text-neutral-50",
-    isActive: true,
-  },
-  "Node.js": {
-    icon: <SiNodedotjs size={iconSize} />,
-    background: "bg-green-600",
-    color: "text-green-600",
-    isActive: true,
-  },
-  "Express.js": {
-    icon: <SiExpress size={iconSize} />,
-    background: "bg-neutral-800",
-    color: "text-neutral-800",
-    isActive: true,
-  },
-  "Nest.js": {
-    icon: <SiNestjs size={iconSize} />,
-    background: "bg-rose-600",
-    color: "text-rose-600",
+    background: "bg-purple-500",
     isActive: false,
   },
-  Go: {
-    icon: <FaGolang size={iconSize} />,
-    background: "bg-sky-500",
-    color: "text-sky-500",
+  Odoo: {
+    icon: <SiOdoo size={iconSize} />,
+    color: "text-purple-800",
+    background: "bg-purple-800",
     isActive: true,
   },
-  PHP: {
-    icon: <SiPhp size={iconSize} />,
-    background: "bg-indigo-400",
-    color: "text-indigo-400",
+  "Microsoft Project": {
+    icon: <FaMicrosoft size={iconSize} />,
+    color: "text-green-600",
+    background: "bg-green-600",
     isActive: true,
   },
-  Laravel: {
-    icon: <SiLaravel size={iconSize} />,
-    background: "bg-red-700",
-    color: "text-red-700",
+  HTML5: {
+    icon: <SiHtml5 size={iconSize} />,
+    color: "text-orange-500",
+    background: "bg-orange-500",
     isActive: true,
   },
-  Prisma: {
-    icon: <SiPrisma size={iconSize} />,
-    background: "bg-teal-500",
-    color: "text-teal-500",
-    isActive: true,
-  },
-  Kotlin: {
-    icon: <SiKotlin size={iconSize} />,
-    background: "bg-violet-600",
-    color: "text-violet-600",
-    isActive: true,
-  },
-  PostgreSql: {
-    icon: <BiLogoPostgresql size={iconSize} />,
+  "Cascading Style Sheets (CSS)": {
+    icon: <SiCss3 size={iconSize} />,
+    color: "text-blue-500",
     background: "bg-blue-500",
-    color: "text-blue-500",
     isActive: true,
   },
-  MySql: {
-    icon: <SiMysql size={iconSize} />,
-    background: "bg-cyan-700",
-    color: "text-cyan-700",
+  Bootstrap: {
+    icon: <BsFillBootstrapFill size={iconSize} />,
+    color: "text-violet-600",
+    background: "bg-violet-600",
     isActive: true,
   },
-  MongoDb: {
-    icon: <SiMongodb size={iconSize} />,
-    background: "bg-green-600",
-    color: "text-green-600",
-    isActive: true,
-  },
-  Firebase: {
-    icon: <SiFirebase size={iconSize} />,
-    background: "bg-amber-500",
-    color: "text-amber-500",
-    isActive: true,
-  },
-  Supabase: {
-    icon: <SiSupabase size={iconSize} />,
-    background: "bg-emerald-500",
-    color: "text-emerald-500",
-    isActive: true,
-  },
-  Jest: {
-    icon: <SiJest size={iconSize} />,
-    background: "bg-pink-600",
-    color: "text-pink-600",
+  "Python (Programming Language)": {
+    icon: <SiPython size={iconSize} />,
+    color: "text-yellow-400",
+    background: "bg-yellow-400",
     isActive: false,
-  },
-  Docker: {
-    icon: <SiDocker size={iconSize} />,
-    background: "bg-blue-600",
-    color: "text-blue-500",
-    isActive: true,
-  },
-  AI: {
-    icon: <BsRobot size={iconSize} />,
-    background: "bg-fuchsia-700",
-    color: "text-fuchsia-700",
-    isActive: true,
-  },
-  Npm: {
-    icon: <FaNpm size={iconSize} />,
-    background: "bg-red-700",
-    color: "text-red-500",
-    isActive: true,
-  },
-  Yarn: {
-    icon: <SiYarn size={iconSize} />,
-    background: "bg-violet-800",
-    color: "text-sky-400",
-    isActive: true,
   },
   bun: {
     icon: <SiBun size={iconSize} />,
     background: "bg-orange-100",
     color: "text-yellow-50",
-    isActive: true,
-  },
-  Github: {
-    icon: <SiGithub size={iconSize} />,
-    background: "bg-slate-800",
-    color: "text-neutral-50",
     isActive: true,
   },
 };

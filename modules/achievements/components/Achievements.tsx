@@ -1,10 +1,9 @@
 "use client";
 
 import useSWR from "swr";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 import EmptyState from "@/common/components/elements/EmptyState";
 import { AchievementItem } from "@/common/types/achievements";
@@ -16,37 +15,30 @@ import FilterHeader from "./FilterHeader";
 
 const Achievements = () => {
   const t = useTranslations("AchievementsPage");
-
+  const locale = useLocale(); // 1. Ambil bahasa yang aktif (misal: 'id' atau 'en')
   const params = useSearchParams();
-  const [filter, setFilter] = useState({
-    category: params.get("category") || "",
-    search: params.get("search") || "",
-  });
+
   const category = params.get("category");
   const search = params.get("search");
 
-  let apiUrl = "/api/achievements";
-
+  // Bangun URL API dengan semua parameter yang diperlukan
   const queryParams = new URLSearchParams();
   if (category) queryParams.append("category", category);
   if (search) queryParams.append("search", search);
+  queryParams.append("lang", locale); // 2. Tambahkan parameter bahasa ke URL
 
-  if (queryParams.toString()) {
-    apiUrl += `?${queryParams.toString()}`;
-  }
+  const apiUrl = `/api/achievements?${queryParams.toString()}`;
 
-  const { data, isLoading, error } = useSWR(apiUrl, fetcher);
+  const { data, isLoading, error } = useSWR<AchievementItem[]>(apiUrl, fetcher);
 
-  const filteredAchievements: AchievementItem[] = data
-    ?.filter(
-      (item: AchievementItem) =>
-        item?.is_show && (!category || item?.category === category),
-    )
-    .sort((a: AchievementItem, b: AchievementItem) => b.id - a.id);
+  // 3. Urutkan data berdasarkan tanggal, dari yang terbaru ke yang terlama
+  const sortedAchievements = data?.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <section className="space-y-4">
-      <FilterHeader totalData={data?.length} />
+      <FilterHeader totalData={sortedAchievements?.length || 0} />
 
       {isLoading && (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -58,20 +50,21 @@ const Achievements = () => {
 
       {error && <EmptyState message={t("error")} />}
 
-      {filteredAchievements?.length === 0 && (
+      {/* 4. Gunakan data yang sudah diurutkan, tidak perlu filter lagi */}
+      {!isLoading && !error && sortedAchievements && sortedAchievements.length === 0 && (
         <EmptyState message={t("no_data")} />
       )}
 
-      {!isLoading && !error && filteredAchievements.length !== 0 && (
+      {!isLoading && !error && sortedAchievements && sortedAchievements.length > 0 && (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {filteredAchievements?.map((item, index) => (
+          {sortedAchievements.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.id} // Gunakan item.id yang unik sebagai key
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <AchievementCard key={index} {...item} />
+              <AchievementCard {...item} />
             </motion.div>
           ))}
         </div>

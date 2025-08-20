@@ -6,7 +6,7 @@ const ChatPreview = () => {
       </div>
 
       <div className="max-w-[80%] self-end rounded-2xl rounded-tr-none bg-blue-500 px-4 py-3 text-white">
-        <p className="text-sm">Yes, I built it myself!</p>
+        <p className="text-sm">Yes and special credit for @SatriaBahari</p>
       </div>
     </div>
   );
