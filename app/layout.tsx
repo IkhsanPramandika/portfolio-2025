@@ -50,10 +50,9 @@ const RootLayout = async ({
       <Script
         defer
         src="https://cloud.umami.is/script.js"
-        data-website-id={process.env.UMAMI_WEBSITE_ID_SITE}
+        data-website-id="af434090-e10b-412f-bb4d-73d48fb39e1a"
 
-        // data-domains="satriabahari.site"
-        // data-website-id="8e2c9f27-a12b-48ca-8130-808ebe377aca"
+        
       ></Script>
       <body className={onestSans.className}>
         <NextTopLoader
