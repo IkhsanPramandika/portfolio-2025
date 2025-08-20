@@ -16,7 +16,7 @@ export const UMAMI_ACCOUNT = {
   websites: [
     // Karena Anda hanya punya 1 website, kita buat 1 objek saja
     {
-      domain: "https://ikhsan-pramandika.vercel.app", // <-- Ganti dengan domain Anda
+      domain: "ikhsan-pramandika.vercel.app", // <-- Ganti dengan domain Anda
       website_id: process.env.UMAMI_WEBSITE_ID_SITE, // Biarkan, ini mengambil dari .env
       umami_url:
         "https://cloud.umami.is/share/3oaceF4faLcVz0DI/ikhsan-pramandika.vercel.app", // <-- Ganti dengan URL share dari Umami
